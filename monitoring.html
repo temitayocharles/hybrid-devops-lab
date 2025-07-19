@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hybrid DevOps Lab | Architecture</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #041830, #000c1a);
+      color: #f1f1f1;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background: #000000cc;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    header h1 {
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #1ecfff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 6px #1ecfff;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #11ffff;
+      text-shadow: 0 0 6px #11ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #cccccc;
+    }
+    img {
+      width: 100%;
+      max-width: 900px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #00c3ff88;
+      margin-top: 2rem;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      background: #000000cc;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>Hybrid DevOps Lab</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="ci.html">CI/CD</a>
+    <a href="security.html">Security</a>
+    <a href="monitoring.html">Monitoring</a>
+    <a href="gitops.html">GitOps</a>
+    <a href="docs.html">Docs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Lab Architecture</h2>
+  <p>
+    The Hybrid DevOps Lab is composed of interconnected local and cloud components designed to simulate a secure, production-grade infrastructure. The CI/CD layer is built around GitHub Actions and Jenkins. The GitOps layer is powered by KIND and ArgoCD. Security is enforced using Vault (with OIDC), SOPS, and strict ClusterIP service exposure via NGINX ingress.
+  </p>
+
+  <p>
+    Below is a high-level system architecture. All components communicate via secured channels and follow strict namespace segregation:
+  </p>
+
+  <img src="https://raw.githubusercontent.com/your-repo/your-project/gh-pages/diagrams/hybrid-architecture.png" alt="DevOps Architecture Diagram" />
+
+</section>
+
+<footer>
+  © 2025 Temitayo Charles Akinniranye — Architected for security & scalability
+</footer>
+
+</body>
+</html>
