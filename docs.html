@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hybrid DevOps Lab | Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #03111b, #000610);
+      color: #e6e6e6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background: #000000dd;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    header h1 {
+      color: #00e3ff;
+      text-shadow: 0 0 10px #00e3ff;
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #18dfff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 6px #18dfff;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #0fffe6;
+      text-shadow: 0 0 6px #0fffe6;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      color: #8efeff;
+      margin-top: 2rem;
+    }
+    p, li {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      background: #000000dd;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>Hybrid DevOps Lab</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="ci.html">CI/CD</a>
+    <a href="security.html">Security</a>
+    <a href="monitoring.html">Monitoring</a>
+    <a href="gitops.html">GitOps</a>
+    <a href="docs.html">Docs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Full Documentation</h2>
+
+  <h3>Prerequisites</h3>
+  <ul>
+    <li>Docker Desktop</li>
+    <li>Git + GitHub account</li>
+    <li>Vault CLI and Docker image</li>
+    <li>kubectl + kind</li>
+    <li>Helm v3+</li>
+  </ul>
+
+  <h3>Project Phases</h3>
+  <ol>
+    <li><strong>Phase 1:</strong> Initialize Maven App, Jenkins, SonarQube, MinIO, Prometheus, Grafana</li>
+    <li><strong>Phase 2:</strong> Add ArgoCD, Vault Agent Injector, Ingress, KIND overlay</li>
+    <li><strong>Phase 3:</strong> Prebuilt Microservices + Docker Hub + Secure CI with Vault OIDC</li>
+    <li><strong>Phase 4:</strong> GitOps multi-env, Rollouts, Alertmanager, Slack integration</li>
+  </ol>
+
+  <h3>Repo Structure</h3>
+  <pre>
+hybrid-devops-lab/
+├── .github/workflows/
+├── jenkins/
+├── helm-charts/
+├── manifests/
+├── vault/
+├── dashboards/
+└── docs/
+  </pre>
+
+  <h3>Setup Instructions</h3>
+  <ul>
+    <li>Clone repo and start with <code>setup.sh</code></li>
+    <li>Use <code>vault auth enable oidc</code> to configure secure access</li>
+    <li>Push image updates to trigger GitHub Actions → Jenkins → ArgoCD</li>
+    <li>Use <code>kubectl port-forward svc/grafana</code> for UI testing</li>
+  </ul>
+</section>
+
+<footer>
+  Documentation maintained by Temitayo Charles Akinniranye
+</footer>
+
+</body>
+</html>
