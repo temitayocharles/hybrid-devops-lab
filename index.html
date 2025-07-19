@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hybrid DevOps Lab | Home</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(145deg, #0a0f24, #041e42);
+      color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background: #000000cc;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    header h1 {
+      color: #00ffe7;
+      text-shadow: 0 0 8px #00ffe7;
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 6px #00bfff;
+    }
+    nav a:hover {
+      color: #ffffff;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    h2 {
+      color: #1fe0ff;
+      text-shadow: 0 0 6px #1fe0ff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #cccccc;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      background: #000000cc;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>Hybrid DevOps Lab</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="ci.html">CI/CD</a>
+    <a href="security.html">Security</a>
+    <a href="monitoring.html">Monitoring</a>
+    <a href="gitops.html">GitOps</a>
+    <a href="docs.html">Docs</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Welcome to the Hybrid DevOps Lab</h2>
+  <p>
+    This lab simulates a fully integrated, secure, and production-ready DevOps environment designed to showcase real-world best practices. The project uses a hybrid model—blending local infrastructure (Docker, Jenkins, Vault, MinIO) with Kubernetes-based GitOps delivery, CI/CD automation, secrets management, image scanning, and alert routing.
+  </p>
+
+  <p>
+    Explore how GitHub Actions triggers Jenkins to deploy apps via ArgoCD. Discover the role of Vault OIDC for secure identity management, and learn how a strict ClusterIP + Ingress strategy secures all services behind a single proxy.
+  </p>
+
+  <p>
+    The site provides full documentation for each system component and implementation stage. Use the navigation bar above to explore CI/CD pipelines, GitOps patterns, secrets handling, observability dashboards, and much more.
+  </p>
+</section>
+
+<footer>
+  © 2025 Temitayo Charles Akinniranye — Built for enterprise excellence
+</footer>
+
+</body>
+</html>
