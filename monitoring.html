@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hybrid DevOps Lab | Architecture</title>
+  <title>Hybrid DevOps Lab | Monitoring</title>
   <style>
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #041830, #000c1a);
-      color: #f1f1f1;
+      background: linear-gradient(to bottom, #03131e, #00060f);
+      color: #f2f2f2;
       font-family: 'Segoe UI', sans-serif;
     }
     header {
@@ -20,16 +20,16 @@
       border-bottom: 1px solid #1a1a1a;
     }
     header h1 {
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff;
+      color: #00e6ff;
+      text-shadow: 0 0 10px #00e6ff;
       font-size: 1.8rem;
     }
     nav a {
       margin: 0 1rem;
-      color: #1ecfff;
+      color: #17d0ff;
       text-decoration: none;
       font-weight: bold;
-      text-shadow: 0 0 6px #1ecfff;
+      text-shadow: 0 0 6px #17d0ff;
     }
     nav a:hover {
       color: #ffffff;
@@ -40,23 +40,21 @@
       margin: auto;
     }
     h2 {
-      color: #11ffff;
-      text-shadow: 0 0 6px #11ffff;
+      color: #00f6ff;
+      text-shadow: 0 0 6px #00f6ff;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
     p {
-      line-height: 1.7;
       font-size: 1.1rem;
-      color: #cccccc;
+      color: #dddddd;
+      line-height: 1.7;
     }
-    img {
-      width: 100%;
-      max-width: 900px;
-      border: 1px solid #333;
-      border-radius: 8px;
-      box-shadow: 0 0 20px #00c3ff88;
-      margin-top: 2rem;
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.6rem;
     }
     footer {
       padding: 1rem;
@@ -85,21 +83,32 @@
 </header>
 
 <section>
-  <h2>Lab Architecture</h2>
-  <p>
-    The Hybrid DevOps Lab is composed of interconnected local and cloud components designed to simulate a secure, production-grade infrastructure. The CI/CD layer is built around GitHub Actions and Jenkins. The GitOps layer is powered by KIND and ArgoCD. Security is enforced using Vault (with OIDC), SOPS, and strict ClusterIP service exposure via NGINX ingress.
-  </p>
+  <h2>Monitoring & Observability</h2>
 
   <p>
-    Below is a high-level system architecture. All components communicate via secured channels and follow strict namespace segregation:
+    The lab implements full observability using Prometheus, Grafana, and Alertmanager. It captures application metrics, infrastructure state, and security alerts.
   </p>
 
-  <img src="https://raw.githubusercontent.com/your-repo/your-project/gh-pages/diagrams/hybrid-architecture.png" alt="DevOps Architecture Diagram" />
+  <h3>Monitoring Stack</h3>
+  <ul>
+    <li><strong>Prometheus:</strong> Scrapes metrics from app services, ArgoCD, Jenkins, Vault, and Kubernetes API.</li>
+    <li><strong>Grafana:</strong> Dashboards visualize deployments, pod metrics, CI pipeline runs, and secrets audit.</li>
+    <li><strong>Alertmanager:</strong> Routes notifications to Slack via webhook, based on severity and rule groups.</li>
+    <li><strong>Node Exporter:</strong> Collects EC2 host metrics (CPU, RAM, Disk, etc.)</li>
+    <li><strong>Blackbox Exporter:</strong> Optional probe for uptime and HTTPS validation.</li>
+  </ul>
+
+  <h3>Examples</h3>
+  <ul>
+    <li>Jenkins Job Failure → Slack Alert</li>
+    <li>High Pod Memory Usage → Grafana Dashboard Warning</li>
+    <li>Vault Policy Violation → Prometheus Rule → Alertmanager → Slack</li>
+  </ul>
 
 </section>
 
 <footer>
-  © 2025 Temitayo Charles Akinniranye — Architected for security & scalability
+  © 2025 Temitayo Charles Akinniranye — Observe. Detect. Resolve.
 </footer>
 
 </body>
